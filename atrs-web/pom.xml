@@ -1,0 +1,144 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>jp.co.ntt.atrs</groupId>
+    <artifactId>atrs-parent</artifactId>
+    <version>1.1.0.RELEASE</version>
+    <relativePath>../atrs-parent/pom.xml</relativePath>
+  </parent>
+  <artifactId>atrs-web</artifactId>
+  <name>${project.artifactId}</name>
+  <packaging>war</packaging>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <warName>atrs</warName>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.cargo</groupId>
+        <artifactId>cargo-maven2-plugin</artifactId>
+        <configuration>
+          <deployables>
+            <deployable>
+              <location>${project.basedir}/target/atrs.war</location>
+              <type>war</type>
+            </deployable>
+          </deployables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>default</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>${project.groupId}</groupId>
+          <artifactId>atrs-env</artifactId>
+          <version>${project.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.taglibs</groupId>
+          <artifactId>taglibs-standard-jstlel</artifactId>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>warpack</id>
+      <dependencies>
+      </dependencies>
+    </profile>
+    <!-- Add profile for packaging JSTL jars -->
+    <profile>
+      <id>warpack-jstl</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.apache.taglibs</groupId>
+          <artifactId>taglibs-standard-jstlel</artifactId>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+
+  <dependencies>
+    <!-- == Begin ATRS == -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>atrs-domain</artifactId>
+      <version>${project.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>${project.groupId}</groupId>
+          <artifactId>atrs-env</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <!-- == End ATRS == -->
+
+    <!-- == Begin TERASOLUNA == -->
+    <dependency>
+      <groupId>org.terasoluna.gfw</groupId>
+      <artifactId>terasoluna-gfw-web-dependencies</artifactId>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.terasoluna.gfw</groupId>
+      <artifactId>terasoluna-gfw-web-jsp-dependencies</artifactId>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.terasoluna.gfw</groupId>
+      <artifactId>terasoluna-gfw-security-web-dependencies</artifactId>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.terasoluna.gfw</groupId>
+      <artifactId>terasoluna-gfw-recommended-web-dependencies</artifactId>
+      <type>pom</type>
+    </dependency>
+    <!-- == End TERASOLUNA == -->
+
+    <!-- == Begin Tomcat == -->
+    <!-- Servlet API 3.0 & JSP API 2.2 -->
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-jsp-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <!-- == End Tomcat == -->
+
+    <!-- == Begin Unit Test == -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+    <!-- == End Unit Test == -->
+  </dependencies>
+
+
+</project>
