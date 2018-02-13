@@ -1,6 +1,6 @@
 # Airline Ticket Reservation System (ATRS)
 
-This is a reference application for developers to learn how to build applications with Macchinetta Framework.
+This is a reference application for developers to learn how to build applications with Macchinetta Server Framework & Macchinetta Client Libraries.
 
 ## How to run the application
 
@@ -22,25 +22,19 @@ First of all, create database named 'atrs'.
 After that, execute the command below at the directory where the downloaded source code is unzipped.
 
 ```console
-$ mvn -f atrs-initdb/pom.xml sql:execute
+$ mvn sql:execute -f atrs-initdb/pom.xml
 ```
 
 It is assumed that maven is already installed.
 If not, install it and try again.
 
-### Install Tomcat
-
-Install Tomcat.
-
-### Build applicatoin
+### Build and run applicatoin
 
 Execute the command below at the directory where the downloaded source code is unzipped.
 
 ```console
-$ mvn -f atrs-parent/pom.xml clean install
-$ mvn -f atrs-env/pom.xml clean install
-$ mvn -f atrs-domain/pom.xml clean install
-$ mvn -f atrs-web/pom.xml clean install
+$ mvn clean install
+$ mvn cargo:run -f atrs-web/pom.xml
 ```
 
-Deploy 'atrs-web/target/atrs.war' to tomcat and access [http://localhost:8080/atrs].
+Access [http://localhost:8080/atrs/].

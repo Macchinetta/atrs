@@ -19,7 +19,7 @@
       <div class="row">
 
         <section class="col-md-12">
-          <t:messagesPanel panelElement="ul" panelClassName="alert list-unstyled" outerElement="" />
+          <t:messagesPanel panelElement="ul" panelClassName="alert list-unstyled" outerElement="" disableHtmlEscape="true"/>
 
           <section>
             <h3>選択フライト</h3>

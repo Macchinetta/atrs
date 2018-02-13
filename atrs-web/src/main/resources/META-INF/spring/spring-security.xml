@@ -26,7 +26,12 @@
     <property name="authenticationManager" ref="authenticationManager" />
     <property name="authenticationFailureHandler" ref="authenticationFailureHandler" />
     <property name="authenticationSuccessHandler" ref="authenticationSuccessHandler" />
-    <property name="filterProcessesUrl" value="/auth/dologin" />
+    <property name="requiresAuthenticationRequestMatcher"> 
+        <bean class="org.springframework.security.web.util.matcher.AntPathRequestMatcher"> 
+            <constructor-arg index="0" value="/auth/dologin" /> 
+            <constructor-arg index="1" value="POST" /> 
+        </bean> 
+    </property> 
     <property name="usernameParameter" value="membershipNumber" />
     <property name="passwordParameter" value="password" />
   </bean>

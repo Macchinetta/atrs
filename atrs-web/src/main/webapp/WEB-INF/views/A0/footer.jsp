@@ -1,5 +1,5 @@
 <footer id="footer">
   <div class="container">
-    <span>Copyright &copy; 2015 NTT.</span>
+    <span>Copyright &copy; 2014-2017 NTT Corporation.</span>
   </div>
 </footer>

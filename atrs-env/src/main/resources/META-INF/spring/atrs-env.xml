@@ -20,6 +20,14 @@
     <constructor-arg index="0" ref="realDataSource" />
   </bean>
 
+<!--
+  <jdbc:initialize-database data-source="dataSource"
+    ignore-failures="ALL">
+    <jdbc:script location="classpath:/database/${database}-schema.sql" encoding="UTF-8" />
+    <jdbc:script location="classpath:/database/${database}-dataload.sql" encoding="UTF-8" />
+  </jdbc:initialize-database>
+-->
+
   <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
     <property name="dataSource" ref="dataSource" />
   </bean>

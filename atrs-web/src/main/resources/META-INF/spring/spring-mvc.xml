@@ -89,6 +89,11 @@
         <entry key="common/error/badRequest-error" value="400" />
       </map>
     </property>
+    <property name="excludedExceptions">
+        <array>
+            <value>org.springframework.web.util.NestedServletException</value>
+        </array>
+    </property>
     <property name="defaultStatusCode" value="500" />
     <property name="exceptionCodeResolver" ref="exceptionCodeResolver" />
     <property name="preventResponseCaching" value="true" />

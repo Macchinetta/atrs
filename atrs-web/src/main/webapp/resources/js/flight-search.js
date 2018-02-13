@@ -1,7 +1,7 @@
 /*!
  * 空席照会画面(B102)スクリプト。
  *
- * Copyright(c) 2015 NTT Corporation.
+ * Copyright(c) 2014-2017 NTT Corporation.
  */
 
 'use strict';
