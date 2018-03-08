@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="contextPath" content="${pageContext.request.contextPath}" />
+    <meta name="contextPath" content="${pageContext.request.contextPath}/" />
     <title>予約 | Airline Ticket Reservation System</title>
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="contextPath" content="${pageContext.request.contextPath}" />
+    <meta name="contextPath" content="${pageContext.request.contextPath}/" />
     <meta name="reserveIntervalTime" content="${f:h(flightSearchOutputDto.reserveIntervalTime)}" />
     <meta name="isInitialSearchUnnecessary" content="${f:h(isInitialSearchUnnecessary)}" />
     <security:csrfMetaTags />
