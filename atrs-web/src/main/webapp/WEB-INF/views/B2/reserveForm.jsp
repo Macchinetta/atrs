@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="contextPath" content="${pageContext.request.contextPath}/" />
+    <meta name="contextPath" content="${pageContext.request.contextPath}" />
     <title>予約 | Airline Ticket Reservation System</title>
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">
@@ -328,7 +328,7 @@
 
     <script src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/lodash/lodash.compat.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/vendor/lodash/lodash.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/vendor/parsleyjs/parsley.min.js"></script>
 
     <script src="${pageContext.request.contextPath}/resources/js/atrs.js"></script>

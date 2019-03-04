@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="contextPath" content="${pageContext.request.contextPath}/" />
+    <meta name="contextPath" content="${pageContext.request.contextPath}" />
     <meta name="reserveIntervalTime" content="${f:h(flightSearchOutputDto.reserveIntervalTime)}" />
     <meta name="isInitialSearchUnnecessary" content="${f:h(isInitialSearchUnnecessary)}" />
     <security:csrfMetaTags />
@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap-datepicker/css/datepicker3.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/jquery.tablesorter/css/theme.bootstrap.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/jquery.tablesorter/css/theme.default.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
@@ -208,7 +208,7 @@
     <script src="${pageContext.request.contextPath}/resources/vendor/jquery.tablesorter/js/jquery.tablesorter.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/vendor/jquery.tablesorter/js/jquery.tablesorter.widgets.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/vendor/jquery.tablesorter/addons/pager/jquery.tablesorter.pager.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/lodash/lodash.compat.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/vendor/lodash/lodash.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/vendor/moment/min/moment.min.js"></script>
     <script src="${pageContext.request.contextPath}/resources/vendor/parsleyjs/parsley.min.js"></script>
 

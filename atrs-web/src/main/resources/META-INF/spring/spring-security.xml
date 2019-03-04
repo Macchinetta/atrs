@@ -7,6 +7,12 @@
     http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+  <!-- REST API設定 -->
+  <sec:http pattern="/api/v1/**" create-session="stateless">
+    <sec:http-basic/>
+    <sec:csrf disabled="true"/>
+  </sec:http>
+
   <!-- ログイン認証の設定 -->
   <sec:http auto-config="false" entry-point-ref="loginUrlAuthenticationEntryPoint">
     <sec:custom-filter ref="userIdMDCPutFilter" after="ANONYMOUS_FILTER" />
@@ -17,6 +23,7 @@
       delete-cookies="JSESSIONID"
       success-handler-ref="logoutSuccessHandler" />
     <sec:intercept-url pattern="/member/update" access="hasRole('MEMBER')" />
+    <sec:intercept-url pattern="/HistoryReport/**" access="hasRole('MEMBER')" />
     <sec:session-management />
     <sec:access-denied-handler ref="accessDeniedHandler"/>
   </sec:http>

@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap-datepicker/css/datepicker3.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 
   </head>
@@ -30,11 +30,11 @@
           <section>
             <h3>概要</h3>
             <p>
-              ATRS（本アプリケーション）は、Macchinetta オンライン版 フレームワーク、Macchinetta クライアント版 フレームワーク（以下、フレームワーク）を用いたサンプルアプリケーションです。
+              ATRS（本アプリケーション）は、Macchinetta オンライン版 フレームワーク、Macchinetta クライアント基本版 フレームワーク（以下、フレームワーク）を用いたサンプルアプリケーションです。
             </p>
             <dl>
               <dt>バージョン</dt>
-              <dd>1.5.1</dd>
+              <dd>1.6.0</dd>
             </dl>
           </section>
 
