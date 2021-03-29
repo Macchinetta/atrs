@@ -1,3 +1,6 @@
 eclipse
 .project
 .settings
+*.doc*
+*.ppt*
+*.xls*
