@@ -8,13 +8,13 @@
     http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
   <!-- REST API設定 -->
-  <sec:http pattern="/api/v1/**" create-session="stateless">
+  <sec:http pattern="/api/v1/**" create-session="stateless" once-per-request="false">
     <sec:http-basic/>
     <sec:csrf disabled="true"/>
   </sec:http>
 
   <!-- ログイン認証の設定 -->
-  <sec:http auto-config="false" entry-point-ref="loginUrlAuthenticationEntryPoint">
+  <sec:http auto-config="false" entry-point-ref="loginUrlAuthenticationEntryPoint" once-per-request="false">
     <sec:custom-filter ref="userIdMDCPutFilter" after="ANONYMOUS_FILTER" />
     <sec:custom-filter position="FORM_LOGIN_FILTER" ref="atrsUsernamePasswordAuthenticationFilter" />
     <sec:logout
