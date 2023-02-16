@@ -7,10 +7,13 @@
     http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd
     http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
+  <sec:http pattern="/resources/**" security="none"/>
+
   <!-- REST API設定 -->
-  <sec:http pattern="/api/v1/**" create-session="stateless">
+  <sec:http pattern="/api/v1/**" request-matcher="ant" create-session="stateless">
     <sec:http-basic/>
     <sec:csrf disabled="true"/>
+    <sec:intercept-url pattern="/**" access="permitAll" />
   </sec:http>
 
   <!-- ログイン認証の設定 -->
@@ -24,6 +27,7 @@
       success-handler-ref="logoutSuccessHandler" />
     <sec:intercept-url pattern="/member/update" access="hasRole('MEMBER')" />
     <sec:intercept-url pattern="/HistoryReport/**" access="hasRole('MEMBER')" />
+    <sec:intercept-url pattern="/**" access="permitAll" />
     <sec:session-management />
     <sec:access-denied-handler ref="accessDeniedHandler"/>
   </sec:http>
@@ -33,15 +37,18 @@
     <property name="authenticationManager" ref="authenticationManager" />
     <property name="authenticationFailureHandler" ref="authenticationFailureHandler" />
     <property name="authenticationSuccessHandler" ref="authenticationSuccessHandler" />
-    <property name="requiresAuthenticationRequestMatcher"> 
+    <property name="requiresAuthenticationRequestMatcher">
       <bean class="org.springframework.security.web.util.matcher.AntPathRequestMatcher">
         <constructor-arg index="0" value="/auth/dologin" />
         <constructor-arg index="1" value="POST" />
-      </bean> 
-    </property> 
+      </bean>
+    </property>
     <property name="usernameParameter" value="membershipNumber" />
     <property name="passwordParameter" value="password" />
+    <property name="securityContextRepository" ref="httpSessionSecurityContextRepository" />
   </bean>
+
+  <bean id = "httpSessionSecurityContextRepository"  class="org.springframework.security.web.context.HttpSessionSecurityContextRepository" />
 
   <!-- 認証成功した場合画面遷移Handler -->
   <bean id="authenticationSuccessHandler" class="jp.co.ntt.atrs.app.common.security.AtrsAuthenticationSuccessHandler">
@@ -89,6 +96,10 @@
       <bean class="org.springframework.security.web.access.AccessDeniedHandlerImpl" />
     </constructor-arg>
   </bean>
+
+  <bean id="mvcHandlerMappingIntrospector" class="org.springframework.web.servlet.handler.HandlerMappingIntrospector" />
+
+  <bean id="webSecurityExpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler" />
 
   <bean id="userIdMDCPutFilter" class="org.terasoluna.gfw.security.web.logging.UserIdMDCPutFilter">
     <property name="removeValue" value="true" />

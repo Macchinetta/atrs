@@ -34,7 +34,7 @@
             </p>
             <dl>
               <dt>バージョン</dt>
-              <dd>1.8.1</dd>
+              <dd>1.9.0.RELEASE</dd>
             </dl>
           </section>
 
