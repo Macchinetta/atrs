@@ -1,6 +1,7 @@
-eclipse
+.classpath
 .project
 .settings
-*.doc*
-*.ppt*
-*.xls*
+target
+logs
+log
+evidence
