@@ -25,7 +25,7 @@
         </section>
 
         <section class="col-md-8">
-          <h2>ATRSについて</h2>
+          <h2 id="description-heading">ATRSについて</h2>
 
           <section>
             <h3>概要</h3>
@@ -34,7 +34,7 @@
             </p>
             <dl>
               <dt>バージョン</dt>
-              <dd>1.9.1.RELEASE</dd>
+              <dd>1.10.0.RELEASE</dd>
             </dl>
           </section>
 
