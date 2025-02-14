@@ -57,7 +57,7 @@ import org.terasoluna.gfw.web.token.transaction.TransactionTokenRequestDataValue
 /**
  * Configure SpringMVC.
  */
-@ComponentScan(basePackages = { "jp.co.ntt.atrs.app" })
+@ComponentScan(basePackages = {"jp.co.ntt.atrs.app"})
 @EnableAspectJAutoProxy
 @EnableWebMvc
 @Configuration
@@ -67,8 +67,7 @@ public class SpringMvcConfig implements WebMvcConfigurer {
      * {@inheritDoc}
      */
     @Override
-    public void addArgumentResolvers(
-            List<HandlerMethodArgumentResolver> argumentResolvers) {
+    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
         argumentResolvers.add(pageableHandlerMethodArgumentResolver());
         argumentResolvers.add(authenticationPrincipalArgumentResolver());
     }
@@ -79,10 +78,10 @@ public class SpringMvcConfig implements WebMvcConfigurer {
      */
     @Bean
     public PageableHandlerMethodArgumentResolver pageableHandlerMethodArgumentResolver() {
-        PageableHandlerMethodArgumentResolver pageableHandlerMethodArgumentResolver = new PageableHandlerMethodArgumentResolver();
+        PageableHandlerMethodArgumentResolver pageableHandlerMethodArgumentResolver =
+                new PageableHandlerMethodArgumentResolver();
         pageableHandlerMethodArgumentResolver.setMaxPageSize(100);
-        pageableHandlerMethodArgumentResolver.setFallbackPageable(
-                pageRequest());
+        pageableHandlerMethodArgumentResolver.setFallbackPageable(pageRequest());
         return pageableHandlerMethodArgumentResolver;
     }
 
@@ -130,9 +129,9 @@ public class SpringMvcConfig implements WebMvcConfigurer {
      */
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/resources/**").addResourceLocations(
-                "/resources/", "classpath:META-INF/resources/").setCachePeriod(
-                        60 * 60);
+        registry.addResourceHandler("/resources/**")
+                .addResourceLocations("/resources/", "classpath:META-INF/resources/")
+                .setCachePeriod(60 * 60);
     }
 
     /**
@@ -150,8 +149,7 @@ public class SpringMvcConfig implements WebMvcConfigurer {
      * @param registry {@link InterceptorRegistry}
      * @param interceptor {@link HandlerInterceptor}
      */
-    private void addInterceptor(InterceptorRegistry registry,
-            HandlerInterceptor interceptor) {
+    private void addInterceptor(InterceptorRegistry registry, HandlerInterceptor interceptor) {
         registry.addInterceptor(interceptor).addPathPatterns("/**")
                 .excludePathPatterns("/resources/**");
     }
@@ -161,8 +159,7 @@ public class SpringMvcConfig implements WebMvcConfigurer {
      * @param registry {@link InterceptorRegistry}
      * @param interceptor {@link HandlerInterceptor}
      */
-    private void addInterceptorPath(InterceptorRegistry registry,
-            HandlerInterceptor interceptor) {
+    private void addInterceptorPath(InterceptorRegistry registry, HandlerInterceptor interceptor) {
         registry.addInterceptor(interceptor).addPathPatterns("/**");
     }
 
@@ -212,7 +209,8 @@ public class SpringMvcConfig implements WebMvcConfigurer {
      */
     @Bean("requestDataValueProcessor")
     public RequestDataValueProcessor requestDataValueProcessor() {
-        return new CompositeRequestDataValueProcessor(transactionTokenRequestDataValueProcessor(), csrfRequestDataValueProcessor());
+        return new CompositeRequestDataValueProcessor(transactionTokenRequestDataValueProcessor(),
+                csrfRequestDataValueProcessor());
     }
 
     /**
@@ -248,16 +246,15 @@ public class SpringMvcConfig implements WebMvcConfigurer {
         Properties exceptionMappings = new Properties();
         exceptionMappings.setProperty("InvalidTransactionTokenException",
                 "common/error/token-error");
-        exceptionMappings.setProperty("BadRequestException",
-                "common/error/badRequest-error");
+        exceptionMappings.setProperty("BadRequestException", "common/error/badRequest-error");
         exceptionMappings.setProperty("Exception", "common/error/system-error");
         bean.setExceptionMappings(exceptionMappings);
 
         Properties statusCodes = new Properties();
-        statusCodes.setProperty("common/error/token-error", String.valueOf(
-                HttpStatus.CONFLICT.value()));
-        statusCodes.setProperty("common/error/badRequest-error", String.valueOf(
-                HttpStatus.BAD_REQUEST.value()));
+        statusCodes.setProperty("common/error/token-error",
+                String.valueOf(HttpStatus.CONFLICT.value()));
+        statusCodes.setProperty("common/error/badRequest-error",
+                String.valueOf(HttpStatus.BAD_REQUEST.value()));
         bean.setStatusCodes(statusCodes);
 
         bean.setDefaultStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
@@ -276,14 +273,16 @@ public class SpringMvcConfig implements WebMvcConfigurer {
     @Bean("handlerExceptionResolverLoggingInterceptor")
     public HandlerExceptionResolverLoggingInterceptor handlerExceptionResolverLoggingInterceptor(
             ExceptionLogger exceptionLogger) {
-        HandlerExceptionResolverLoggingInterceptor bean = new HandlerExceptionResolverLoggingInterceptor();
+        HandlerExceptionResolverLoggingInterceptor bean =
+                new HandlerExceptionResolverLoggingInterceptor();
         bean.setExceptionLogger(exceptionLogger);
         return bean;
     }
 
     /**
      * Configure messages logging AOP advisor.
-     * @param handlerExceptionResolverLoggingInterceptor Bean defined by #handlerExceptionResolverLoggingInterceptor
+     * @param handlerExceptionResolverLoggingInterceptor Bean defined by
+     *        #handlerExceptionResolverLoggingInterceptor
      * @see #handlerExceptionResolverLoggingInterceptor(ExceptionLogger)
      * @return Advisor configured for PointCut
      */
