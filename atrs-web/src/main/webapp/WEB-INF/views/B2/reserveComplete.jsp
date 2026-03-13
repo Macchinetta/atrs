@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>予約完了 | Airline Ticket Reservation System</title>
 
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap/css/bootstrap-theme.min.css" />
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
     </head>
     <body>
@@ -36,7 +36,7 @@
                             </tr>
                             <tr>
                                 <th>お支払期限</th>
-                                <td id="payment-deadline"><fmt:formatDate value="${reserveCompleteOutputDto.paymentDate}" pattern="MM月dd日(E)" /></td>
+                                <td id="payment-deadline"><javatime:format value="${reserveCompleteOutputDto.paymentDate}" pattern="MM月dd日(E)" /></td>
                             </tr>
                         </tbody>
                     </table>
@@ -52,8 +52,8 @@
 
         <%@ include file="../A0/footer.jsp" %>
 
-        <script src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="${pageContext.request.contextPath}/webjars/jquery/jquery.min.js"></script>
+        <script src="${pageContext.request.contextPath}/webjars/bootstrap/js/bootstrap.min.js"></script>
 
         <script src="${pageContext.request.contextPath}/resources/js/atrs.js"></script>
     </body>

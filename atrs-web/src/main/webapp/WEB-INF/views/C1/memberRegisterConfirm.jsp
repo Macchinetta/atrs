@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>会員登録確認 | Airline Ticket Reservation System</title>
 
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap/css/bootstrap-theme.min.css" />
         <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
     </head>
     <body>
@@ -45,7 +45,7 @@
                                     <label class="col-md-4 control-label">生年月日</label>
                                     <div class="col-md-8">
                                         <p id="dateOfBirth" class="form-control-static">
-                                            <fmt:formatDate value="${memberRegisterForm.dateOfBirth}" pattern="yyyy年MM月dd日" />
+                                            <javatime:format value="${memberRegisterForm.dateOfBirth}" pattern="yyyy年MM月dd日" />
                                         </p>
                                     </div>
                                 </div>
@@ -146,8 +146,8 @@
 
         <%@ include file="../A0/footer.jsp" %>
 
-        <script src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="${pageContext.request.contextPath}/webjars/jquery/jquery.min.js"></script>
+        <script src="${pageContext.request.contextPath}/webjars/bootstrap/js/bootstrap.min.js"></script>
 
         <script src="${pageContext.request.contextPath}/resources/js/atrs.js"></script>
     </body>

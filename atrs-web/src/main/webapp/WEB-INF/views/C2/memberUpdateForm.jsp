@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>会員情報変更 | Airline Ticket Reservation System</title>
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap-datepicker/css/bootstrap-datepicker3.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 
   </head>
@@ -274,12 +274,12 @@
 
     <%@ include file="../A0/footer.jsp" %>
 
-    <script src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.ja.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/moment/min/moment.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/parsleyjs/parsley.min.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/jquery/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/bootstrap-datepicker/locales/bootstrap-datepicker.ja.min.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/moment/min/moment.min.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/parsleyjs/parsley.min.js"></script>
 
     <script src="${pageContext.request.contextPath}/resources/js/atrs.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/parsley-config.js"></script>

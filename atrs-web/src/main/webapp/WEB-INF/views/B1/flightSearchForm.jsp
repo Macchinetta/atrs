@@ -37,8 +37,8 @@
         </div>
       </div>
 
-      <fmt:formatDate var="flightSearchStartDate" value="${flightSearchOutputDto.beginningPeriod}" pattern="yyyy/MM/dd"/>
-      <fmt:formatDate var="flightSearchEndDate" value="${flightSearchOutputDto.endingPeriod}" pattern="yyyy/MM/dd"/>
+      <javatime:format var="flightSearchStartDate" value="${flightSearchOutputDto.beginningPeriod}" pattern="yyyy/MM/dd"/>
+      <javatime:format var="flightSearchEndDate" value="${flightSearchOutputDto.endingPeriod}" pattern="yyyy/MM/dd"/>
       <div id="date-for-outward" class="form-group">
         <form:label path="outwardDate" cssClass="col-md-4 control-label">往路搭乗日</form:label>
         <div class="col-md-8">

@@ -6,8 +6,8 @@
     <meta name="contextPath" content="${pageContext.request.contextPath}/" />
     <title>予約 | Airline Ticket Reservation System</title>
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 
   </head>
@@ -52,7 +52,7 @@
                 <c:forEach var="flight" items="${selectFlightDtoList}">
                   <tr>
                     <td>${f:h(flight.lineType.name)}</td>
-                    <td><fmt:formatDate value="${flight.departureDate}" pattern="MM月dd日(E)"/></td>
+                    <td><javatime:format value="${flight.departureDate}" pattern="MM月dd日(E)"/></td>
                     <td>${f:h(flight.flightName)}</td>
                     <td>${f:h(fn:substring(flight.departureTime, 0, 2))}:${f:h(fn:substring(flight.departureTime, 2, 4))}</td>
                     <td>${f:h(fn:substring(flight.arrivalTime, 0, 2))}:${f:h(fn:substring(flight.arrivalTime, 2, 4))}</td>
@@ -330,10 +330,10 @@
 
     <%@ include file="../A0/footer.jsp" %>
 
-    <script src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/lodash/lodash.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/parsleyjs/parsley.min.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/jquery/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/lodash/lodash.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/parsleyjs/parsley.min.js"></script>
 
     <script src="${pageContext.request.contextPath}/resources/js/atrs.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/parsley-config.js"></script>

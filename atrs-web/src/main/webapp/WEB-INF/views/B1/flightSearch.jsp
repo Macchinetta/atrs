@@ -9,11 +9,11 @@
     <security:csrfMetaTags />
     <title>空席照会 | Airline Ticket Reservation System</title>
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/jquery.tablesorter/css/theme.bootstrap.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/vendor/jquery.tablesorter/css/theme.default.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/bootstrap-datepicker/css/bootstrap-datepicker3.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/tablesorter/css/theme.bootstrap.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/tablesorter/css/theme.default.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 
   </head>
@@ -30,9 +30,9 @@
           <div class="alert alert-info">
             <ul>
               <li>
-                <span><fmt:formatDate value="${flightSearchOutputDto.beginningPeriod}" pattern="MM月dd日"/></span>
+                <span><javatime:format value="${flightSearchOutputDto.beginningPeriod}" pattern="MM月dd日"/></span>
                 &nbsp;-&nbsp;
-                <span><fmt:formatDate value="${flightSearchOutputDto.endingPeriod}" pattern="MM月dd日"/></span>の空席照会ができます。
+                <span><javatime:format value="${flightSearchOutputDto.endingPeriod}" pattern="MM月dd日"/></span>の空席照会ができます。
               </li>
               <li>フライトは片道便か往復便が予約でき、6席まで予約できます。</li>
             </ul>
@@ -201,16 +201,16 @@
 
     <%@ include file="../A0/footer.jsp" %>
 
-    <script src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.ja.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/jquery.tablesorter/js/jquery.tablesorter.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/jquery.tablesorter/js/jquery.tablesorter.widgets.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/jquery.tablesorter/addons/pager/jquery.tablesorter.pager.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/lodash/lodash.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/moment/min/moment.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/vendor/parsleyjs/parsley.min.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/jquery/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/bootstrap-datepicker/locales/bootstrap-datepicker.ja.min.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/tablesorter/js/jquery.tablesorter.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/tablesorter/js/jquery.tablesorter.widgets.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/tablesorter/addons/pager/jquery.tablesorter.pager.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/lodash/lodash.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/moment/min/moment.min.js"></script>
+    <script src="${pageContext.request.contextPath}/webjars/parsleyjs/parsley.min.js"></script>
 
     <script src="${pageContext.request.contextPath}/resources/js/atrs.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/parsley-config.js"></script>

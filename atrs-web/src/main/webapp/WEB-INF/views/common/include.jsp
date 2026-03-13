@@ -7,3 +7,4 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <%@ taglib uri="http://terasoluna.org/functions" prefix="f"%>
 <%@ taglib uri="http://terasoluna.org/tags" prefix="t"%>
+<%@ taglib uri="http://sargue.net/jsptags/time" prefix="javatime" %>
